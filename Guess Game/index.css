@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Press+Start+2P&family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Containers */
+
+.section-body {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #e6fcf5;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 20% 1fr 20%;
+  grid-template-areas:
+    'a b c'
+    'd e f'
+    'g h i';
+
+  z-index: 5;
+}
+
+.container {
+  grid-area: e;
+  justify-self: center;
+  align-self: center;
+}
+
+/* FOR SECTION - header and button play */
+
+.header {
+  grid-area: b;
+  justify-self: center;
+  align-self: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 4.4rem;
+  color: #2e3231;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.4rem;
+  color: #2e3231;
+  text-transform: uppercase;
+}
+
+.btn-play {
+  font-size: 3.2rem;
+  font-family: 'Press Start 2P', sans-serif;
+  background-color: #38d9a9;
+  border: none;
+  border-radius: 100vw;
+  outline: none;
+  padding: 1.6rem 3.2rem;
+  cursor: pointer;
+  color: #2e3231;
+  transition: all 0.4s;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.342);
+}
+
+.btn-play:hover {
+  background-color: #114133;
+  color: #ebfbf6;
+  transform: translateY(-0.8rem);
+}
+
+/* FOR pop up game input and btns */
+
+.inputs {
+  display: grid;
+  grid-template-columns: repeat(4, 5rem);
+  grid-auto-rows: 7rem 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0.1rem;
+}
+
+.btn {
+  width: 5rem;
+  height: 5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 0.2rem solid rgba(17, 65, 51, 0.5);
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.342);
+}
+
+.btn-check {
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  grid-column: auto / span 4;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background-color: #20c997;
+  color: #2e3231;
+  letter-spacing: 0.15rem;
+  transition: all 0.4s;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.342);
+}
+
+.input-field {
+  grid-column: auto / span 4;
+  font-size: 3.5rem;
+  text-align: center;
+  font-family: 'Press Start 2P', sans-serif;
+  outline: none;
+  outline: none;
+  border: 0.2rem solid rgba(17, 65, 51, 0.5);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+/* Guess */
+
+.guess {
+  font-family: 'Poppins', sans-serif;
+  grid-area: d;
+  align-self: center;
+  justify-self: flex-end;
+  font-size: 9.4rem;
+  color: #2e3231;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guess-txt {
+  font-size: 2.4rem;
+  font-family: 'Poppings', sans-serif;
+}
+
+.message-again {
+  grid-area: f;
+  align-self: center;
+}
+
+.message {
+  margin-bottom: 1rem;
+  font-size: 2.8rem;
+  font-family: 'Poppins', sans-serif;
+  color: #2e3231;
+}
+
+.btn-again {
+  margin-top: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2.4rem;
+  padding: 0.5rem 3rem;
+  border: none;
+  border-radius: 5rem;
+  /* background-color: #114133;
+  color: #ebfbf6; */
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  background-color: #20c997;
+  color: #2e3231;
+  transition: all 0.4s;
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.342);
+}
+
+/* Hover effects on check and again */
+
+.hover:hover {
+  background-color: rgba(56, 217, 169, 0.767);
+  color: #2e3231;
+  font-size: 2.8rem;
+}
+
+.close-btn {
+  grid-area: b;
+  align-self: center;
+  justify-self: center;
+  font-size: 4.4rem;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  color: #2e3231;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in-out 0.5s;
+}
+
+.close-btn:hover {
+  color: #c92a2a;
+  transform: rotate(360deg);
+}
+
+.close-btn::before {
+  content: '';
+  background: rgba(201, 42, 42, 0.804);
+  height: 1rem;
+  display: block;
+  border-radius: 100vw;
+  position: absolute;
+  top: -0.3rem;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform ease-in-out 0.3s;
+}
+
+.close-btn:hover::before {
+  transform: scale(1, 1);
+  transition: transform ease-in-out 0.3s;
+}
+
+/* Score container */
+
+/* .score-container {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.4rem;
+  grid-area: f;
+  align-self: end;
+  display: flex;
+  gap: 4rem;
+  justify-content: start;
+  margin-bottom: 3rem;
+  color: #2e3231;
+}
+
+.score-container p {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+} */
+
+/* Hidden */
+.hidden {
+  display: none;
+}
+
+/* MEDIA QUERY */
+
+@media (max-width: 766px) {
+  .message {
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+  }
+  .btn-again {
+    font-size: 2rem;
+    padding: 0.4rem 2.8rem;
+  }
+  .header {
+    font-size: 3.4rem;
+  }
+  .span {
+    font-size: 1.5rem;
+  }
+  .guess {
+    font-size: 7.4rem;
+  }
+  .btn-check {
+    font-size: 2rem;
+  }
+  .close-btn {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .section-body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #e6fcf5;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15% 1fr 30%;
+    grid-template-areas:
+      'a'
+      'b'
+      'c';
+  }
+  .close-btn {
+    grid-area: a;
+    font-size: 3.4rem;
+    align-self: start;
+    margin-top: 0.5rem;
+  }
+  .guess {
+    grid-area: a;
+    align-self: end;
+    justify-self: center;
+    font-size: 3.4rem;
+  }
+  .container {
+    grid-area: b;
+  }
+
+  .header {
+    grid-area: a;
+  }
+  .message-again {
+    grid-area: c;
+    align-self: start;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .section-body {
+    grid-template-rows: 10% 1fr 40%;
+    gap: 0.5rem;
+  }
+
+  .guess {
+    font-size: 2.4rem;
+    align-self: end;
+  }
+
+  .close-btn {
+    font-size: 2rem;
+    margin-top: 0;
+    align-self: start;
+  }
+}
