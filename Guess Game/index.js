@@ -102,6 +102,8 @@ for (let i = 0; i < btnNumber.length; i++) {
         // fireWorks();
         message.textContent = `🥳 Correct number!`;
         document.querySelector('.guess').textContent = randomNumber;
+        sectionBody.style.background =
+          'linear-gradient(192deg, rgba(132,237,152,1) 0%, rgba(74,209,100,1) 43%, rgba(47,158,68,1) 100%)';
       } else if (guess < randomNumber) {
         message.textContent = `👇 To low!`;
       } else if (guess > randomNumber) {
@@ -118,6 +120,7 @@ again.addEventListener('click', function () {
   document.querySelector('.guess').textContent = '?';
   message.textContent = `Start guessing...`;
   inputField.value = '';
+  sectionBody.style.backgroundColor = '#e6fcf5';
 
   //
 });
